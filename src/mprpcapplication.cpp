@@ -3,8 +3,6 @@
 #include <unistd.h>
 #include <string>
 
-MprpcConfig MprpcApplication::m_config;
-
 void ShowArgsHelp()
 {
     std::cout<<"format: command -i <configfile>" << std::endl;
