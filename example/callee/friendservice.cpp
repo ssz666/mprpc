@@ -4,7 +4,7 @@
 #include "mprpcapplication.h"
 #include "rpcprovider.h"
 #include <vector>
-// #include "logger.h"
+#include "logger.h"
 
 class FriendService : public fixbug::FriendServiceRpc
 {
@@ -40,8 +40,8 @@ public:
 
 int main(int argc, char **argv)
 {
-    // LOG_ERR("ddddd");
-    // LOG_INFO("ddddd");
+    LOG_INFO("first log msg");
+    LOG_ERR("%s:%s:%d", __FILE__, __FUNCTION__, __LINE__);
 
     // 调用框架的初始化操作
     MprpcApplication::GetInstance().Init(argc, argv);

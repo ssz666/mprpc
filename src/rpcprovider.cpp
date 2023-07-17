@@ -1,7 +1,7 @@
 #include "rpcprovider.h"
 #include "mprpcapplication.h"
 #include "rpcheader.pb.h"
-// #include "logger.h"
+#include "logger.h"
 // #include "zookeeperutil.h"
 
 /*
@@ -23,7 +23,7 @@ void RpcProvider::NotifyService(google::protobuf::Service *service)
     int methodCnt = pserviceDesc->method_count();
 
     // std::cout << "service_name:" << service_name << std::endl;
-    // LOG_INFO("service_name:%s", service_name.c_str());
+    LOG_INFO("service_name:%s", service_name.c_str());
 
     for (int i=0; i < methodCnt; ++i)
     {
@@ -32,7 +32,7 @@ void RpcProvider::NotifyService(google::protobuf::Service *service)
         std::string method_name = pmethodDesc->name();
         service_info.m_methodMap.insert({method_name, pmethodDesc});
 
-    //     LOG_INFO("method_name:%s", method_name.c_str());
+        LOG_INFO("method_name:%s", method_name.c_str());
     }
     service_info.m_service = service;
     m_serviceMap.insert({service_name, service_info});
